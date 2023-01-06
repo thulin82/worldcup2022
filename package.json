@@ -1,0 +1,28 @@
+{
+    "name": "euro2021",
+    "version": "1.0.0",
+    "description": "schedules/games in Euro2021",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "author": "Markus Thulin",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/thulin82/euro2021"
+    },
+    "dependencies": {
+        "cors": "^2.8.0",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.0",
+        "hbs": "^4.2.0",
+        "axios": "^1.2.0",
+        "apicache": "^1.6.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.31.0",
+        "nodemon": "^2.0.0"
+    }
+}
