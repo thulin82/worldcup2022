@@ -5,7 +5,7 @@
 ### Get project
 
 ```
-$ git clone git@github.com:thulin82/euro2021.git
+$ git clone git@github.com:thulin82/worldcup2022.git
 ```
 
 ### Get dependencies
