@@ -1,7 +1,7 @@
 {
-    "name": "euro2021",
+    "name": "worldcup2022",
     "version": "1.0.0",
-    "description": "schedules/games in Euro2021",
+    "description": "schedules/games in World Cup 2022",
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
@@ -11,7 +11,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/thulin82/euro2021"
+        "url": "https://github.com/thulin82/worldcup2022"
     },
     "dependencies": {
         "cors": "^2.8.0",
