@@ -92,10 +92,10 @@ router.get('/scorers', function (req, response) {
  *
  *
 */
-/* router.get('/playoff', function (req, response) {
+router.get('/playoff', function (req, response) {
     response.set('Content-Type', 'text/html');
     response.render('playoff');
-}); */
+});
 
 
 module.exports = router;
