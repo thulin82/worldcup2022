@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const dotenv = require('dotenv');
 const axios = require('axios');
+const URL = "https://api.football-data.org/v4/competitions/2000/matches";
 
 dotenv.config();
 
@@ -19,14 +20,14 @@ router.get('/', function (req, response) {
     };
 
     axios.all([
-        axios.get(process.env.URL + "/matches?season=2022&group=GROUP_A", opt),
-        axios.get(process.env.URL + "/matches?season=2022&group=GROUP_B", opt),
-        axios.get(process.env.URL + "/matches?season=2022&group=GROUP_C", opt),
-        axios.get(process.env.URL + "/matches?season=2022&group=GROUP_D", opt),
-        axios.get(process.env.URL + "/matches?season=2022&group=GROUP_E", opt),
-        axios.get(process.env.URL + "/matches?season=2022&group=GROUP_F", opt),
-        axios.get(process.env.URL + "/matches?season=2022&group=GROUP_G", opt),
-        axios.get(process.env.URL + "/matches?season=2022&group=GROUP_H", opt)
+        axios.get(URL + "?season=2022&group=GROUP_A", opt),
+        axios.get(URL + "?season=2022&group=GROUP_B", opt),
+        axios.get(URL + "?season=2022&group=GROUP_C", opt),
+        axios.get(URL + "?season=2022&group=GROUP_D", opt),
+        axios.get(URL + "?season=2022&group=GROUP_E", opt),
+        axios.get(URL + "?season=2022&group=GROUP_F", opt),
+        axios.get(URL + "?season=2022&group=GROUP_G", opt),
+        axios.get(URL + "?season=2022&group=GROUP_H", opt)
     ]).then(axios.spread((resp1, resp2, resp3, resp4, resp5, resp6, resp7, resp8) => {
         response.set('Content-Type', 'text/html');
         response.render('index',
@@ -47,11 +48,11 @@ router.get('/', function (req, response) {
 router.get('/standings', function (req, response) {
     var opt = {
         method: 'GET',
-        url: "https://" + process.env.HOST + "/tournaments/get-standings",
+        url: "https://divanscore.p.rapidapi.com/tournaments/get-standings",
         params: {tournamentId: '16', seasonId: '41087'},
         headers: {
             'x-rapidapi-key': process.env.API_KEY2,
-            'x-rapidapi-host': process.env.HOST
+            'x-rapidapi-host': "divanscore.p.rapidapi.com"
         }
     };
 
@@ -71,11 +72,11 @@ router.get('/standings', function (req, response) {
 router.get('/scorers', function (req, response) {
     const opt = {
         method: 'GET',
-        url: "https://" + process.env.HOST + "/tournaments/get-top-players",
+        url: "https://divanscore.p.rapidapi.com/tournaments/get-top-players",
         params: {tournamentId: '16', seasonId: '41087'},
         headers: {
             'x-rapidapi-key': process.env.API_KEY2,
-            'x-rapidapi-host': process.env.HOST
+            'x-rapidapi-host': "divanscore.p.rapidapi.com"
         }
     };
 
