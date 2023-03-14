@@ -21,10 +21,12 @@ $ npm start
 ```
 
 ### Environment variables
+
 In config/config.env add
+
 ```
-API_KEY = 
-API_KEY2 = 
+API_KEY =
+API_KEY2 =
 ```
 
 © Markus Thulin 2022-
