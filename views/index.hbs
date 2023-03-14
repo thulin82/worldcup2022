@@ -1,184 +1,32 @@
 {{> header }}
-            <div class="collapse navbar-collapse" id="main-menu">
-              <div class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link active" href="/">Index</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/playoff">Playoff</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/scorers">Scorers</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/standings">Standings</a>
-                </li>
-              </div>
-            </div>
-        </div>
-    </nav>
-      <div class="container-fluid p-5">
-        <div class="row g-4">
-
-          <div class="col-md-4 col-lg-3 col-xl-2">
-            <div class="card bg-light">
-              <div class="card-body text-center card-top">
-                <h3 class="card-title mb-3">Group A</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-text">
-                        {{#each A.matches}}
-                            <li>
-                                <strong>{{ homeTeam.name }}</strong>
-                                 vs
-                                <strong>{{ awayTeam.name }}</strong>
-                                {{score.fullTime.home}} - {{score.fullTime.away}}
-                            </li>
-                        {{/each}}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-3 col-xl-2">
-            <div class="card bg-light">
-              <div class="card-body text-center card-top">
-                <h3 class="card-title mb-3">Group B</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-text">
-                        {{#each B.matches}}
-                            <li>
-                                <strong>{{ homeTeam.name }}</strong>
-                                 vs
-                                <strong>{{ awayTeam.name }}</strong>
-                                {{score.fullTime.home}} - {{score.fullTime.away}}
-                            </li>
-                        {{/each}}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-3 col-xl-2">
-            <div class="card bg-light">
-              <div class="card-body text-center card-top">
-                <h3 class="card-title mb-3">Group C</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-text">
-                        {{#each C.matches}}
-                            <li>
-                                <strong>{{ homeTeam.name }}</strong>
-                                 vs
-                                <strong>{{ awayTeam.name }}</strong>
-                                {{score.fullTime.home}} - {{score.fullTime.away}}
-                            </li>
-                        {{/each}}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-3 col-xl-2">
-            <div class="card bg-light">
-              <div class="card-body text-center card-top">
-                <h3 class="card-title mb-3">Group D</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-text">
-                        {{#each D.matches}}
-                            <li>
-                                <strong>{{ homeTeam.name }}</strong>
-                                 vs
-                                <strong>{{ awayTeam.name }}</strong>
-                                {{score.fullTime.home}} - {{score.fullTime.away}}
-                            </li>
-                        {{/each}}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-3 col-xl-2">
-            <div class="card bg-light">
-              <div class="card-body text-center card-top">
-                <h3 class="card-title mb-3">Group E</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-text">
-                        {{#each E.matches}}
-                            <li>
-                                <strong>{{ homeTeam.name }}</strong>
-                                 vs
-                                <strong>{{ awayTeam.name }}</strong>
-                                {{score.fullTime.home}} - {{score.fullTime.away}}
-                            </li>
-                        {{/each}}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-3 col-xl-2">
-            <div class="card bg-light">
-              <div class="card-body text-center card-top">
-                <h3 class="card-title mb-3">Group F</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-text">
-                        {{#each F.matches}}
-                            <li>
-                                <strong>{{ homeTeam.name }}</strong>
-                                 vs
-                                <strong>{{ awayTeam.name }}</strong>
-                                {{score.fullTime.home}} - {{score.fullTime.away}}
-                            </li>
-                        {{/each}}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-3 col-xl-2">
-            <div class="card bg-light">
-              <div class="card-body text-center card-top">
-                <h3 class="card-title mb-3">Group G</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-text">
-                        {{#each G.matches}}
-                            <li>
-                                <strong>{{ homeTeam.name }}</strong>
-                                 vs
-                                <strong>{{ awayTeam.name }}</strong>
-                                {{score.fullTime.home}} - {{score.fullTime.away}}
-                            </li>
-                        {{/each}}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-3 col-xl-2">
-            <div class="card bg-light">
-              <div class="card-body text-center card-top">
-                <h3 class="card-title mb-3">Group H</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-text">
-                        {{#each H.matches}}
-                            <li>
-                                <strong>{{ homeTeam.name }}</strong>
-                                 vs
-                                <strong>{{ awayTeam.name }}</strong>
-                                {{score.fullTime.home}} - {{score.fullTime.away}}
-                            </li>
-                        {{/each}}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="collapse navbar-collapse" id="main-menu">
+  <div class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="/">Index</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/playoff">Playoff</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/scorers">Scorers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/standings">Standings</a>
+    </li>
+  </div>
+</div>
+</div>
+</nav>
+<div class="container-fluid p-5">
+  <div class="row g-4">
+    {{> groups group="A" item=A }}
+    {{> groups group="B" item=B }}
+    {{> groups group="C" item=C }}
+    {{> groups group="D" item=D }}
+    {{> groups group="E" item=E }}
+    {{> groups group="F" item=F }}
+    {{> groups group="G" item=G }}
+    {{> groups group="H" item=H }}
+  </div>
+</div>
 {{> footer }}
