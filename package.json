@@ -7,7 +7,9 @@
     "scripts": {
         "start": "node server.js",
         "dev": "nodemon server.js",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "test": "mocha --reporter json > test-results.json --exit --recursive --timeout 10000 tests",
+        "test_console": "mocha --exit --recursive --timeout 10000 tests"
     },
     "author": "Markus Thulin",
     "license": "MIT",
@@ -18,10 +20,13 @@
     "dependencies": {
         "apicache": "^1.6.0",
         "axios": "^1.7.0",
+        "chai": "^5.1.0",
+        "chai-http": "^5.1.0",
         "cors": "^2.8.0",
         "dotenv": "^16.4.0",
         "express": "^4.21.0",
-        "hbs": "^4.2.0"
+        "hbs": "^4.2.0",
+        "mocha": "^11.0.0"
     },
     "devDependencies": {
         "@eslint/js": "^9.16.0",
