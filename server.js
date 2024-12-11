@@ -1,9 +1,14 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const path = require("path");
-const apicache = require("apicache");
-const hbs = require("hbs");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import path from "path";
+import apicache from "apicache";
+import hbs from "hbs";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 dotenv.config({ path: "./config/config.env" });
 
@@ -30,7 +35,9 @@ hbs.registerPartials(__dirname + "/views/partials");
 
 app.use(express.static(path.join(__dirname, "/public")));
 
-app.use("/", require("./routes/index"));
+// Import routes using dynamic import
+const { default: indexRouter } = await import("./routes/index.js");
+app.use("/", indexRouter);
 
 const PORT = process.env.PORT || 4567;
 
