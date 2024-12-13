@@ -26,6 +26,14 @@ jobs:
                   API_KEY: ${{secrets.API_KEY}}
                   API_KEY2: ${{secrets.API_KEY2}}
             - run: npm run lint
+
+            - name: Upload Test Report
+              if: always()
+              uses: actions/upload-artifact@v3
+              with:
+                  name: test-results
+                  path: test-results.json
+
             - name: Test Report
               uses: dorny/test-reporter@v1
               with:
