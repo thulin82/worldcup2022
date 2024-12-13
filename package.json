@@ -8,8 +8,8 @@
         "start": "node server.js",
         "dev": "nodemon server.js",
         "lint": "eslint .",
-        "test": "cross-env NODE_OPTIONS=--experimental-vm-modules mocha --reporter json > test-results.json --exit --recursive --timeout 10000 tests --trace-warnings",
-        "test_console": "cross-env NODE_OPTIONS=--experimental-vm-modules mocha --exit --recursive --timeout 10000 tests --trace-warnings"
+        "test": "mocha --reporter json > test-results.json --exit --recursive --timeout 10000 tests --trace-warnings",
+        "test_console": "mocha --exit --recursive --timeout 10000 tests --trace-warnings"
     },
     "author": "Markus Thulin",
     "license": "MIT",
@@ -30,7 +30,6 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.16.0",
-        "cross-env": "^7.0.3",
         "eslint": "^9.16.0",
         "globals": "^15.13.0",
         "nodemon": "^3.1.0"
