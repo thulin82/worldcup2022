@@ -22,10 +22,10 @@ jobs:
                   node-version: ${{ matrix.node-version }}
             - run: npm install
             - run: npm test
-            - run: npm run lint
               env:
                   API_KEY: ${{secrets.API_KEY}}
                   API_KEY2: ${{secrets.API_KEY2}}
+            - run: npm run lint
             - name: Test Report
               uses: dorny/test-reporter@v1
               with:
