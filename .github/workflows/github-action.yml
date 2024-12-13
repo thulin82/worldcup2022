@@ -38,4 +38,4 @@ jobs:
               run: |
                   echo "=== NPM Debug Log ==="
                   ls
-                  cat npm-debug.log || true
+                  cat test-results.json || true
