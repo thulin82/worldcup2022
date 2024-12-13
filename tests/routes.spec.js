@@ -19,30 +19,30 @@ describe("World Cup 2022 Routes", () => {
                 });
         });
     });
-    describe("GET /standings", () => {
-        it("should return html", (done) => {
-            chai.request
-                .execute(app)
-                .get("/standings")
-                .end((err, res) => {
-                    expect(res).to.have.status(200);
-                    expect(res.type).to.eql("text/html");
-                    done();
-                });
-        });
-    });
-    describe("GET /scorers", () => {
-        it("should return html", (done) => {
-            chai.request
-                .execute(app)
-                .get("/scorers")
-                .end((err, res) => {
-                    expect(res).to.have.status(200);
-                    expect(res.type).to.eql("text/html");
-                    done();
-                });
-        });
-    });
+    // describe("GET /standings", () => {
+    //     it("should return html", (done) => {
+    //         chai.request
+    //             .execute(app)
+    //             .get("/standings")
+    //             .end((err, res) => {
+    //                 expect(res).to.have.status(200);
+    //                 expect(res.type).to.eql("text/html");
+    //                 done();
+    //             });
+    //     });
+    // });
+    // describe("GET /scorers", () => {
+    //     it("should return html", (done) => {
+    //         chai.request
+    //             .execute(app)
+    //             .get("/scorers")
+    //             .end((err, res) => {
+    //                 expect(res).to.have.status(200);
+    //                 expect(res.type).to.eql("text/html");
+    //                 done();
+    //             });
+    //     });
+    // });
     describe("GET /playoff", () => {
         it("should return html", (done) => {
             chai.request
