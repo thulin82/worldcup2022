@@ -1,0 +1,40 @@
+name: GitHub Actions
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    build:
+        name: Build and Test
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Use Node.js v22.x
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "22.x"
+            - run: npm install
+            - run: npm test
+              env:
+                  API_KEY: ${{secrets.API_KEY}}
+                  API_KEY2: ${{secrets.API_KEY2}}
+            - run: npm run lint
+
+            - name: Upload Test Report
+              if: failure()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: test-results
+                  path: test-results.json
+
+            - name: Test Report
+              uses: dorny/test-reporter@v1
+              with:
+                  name: unit tests (v22.x)
+                  path: test-results.json
+                  reporter: mocha-json

@@ -1,5 +1,7 @@
 # [WORLD CUP 2022](https://github.com/thulin82/worldcup2022)
 
+[![GitHub Actions](https://github.com/thulin82/worldcup2022/actions/workflows/github-action.yml/badge.svg)](https://github.com/thulin82/worldcup2022/actions/workflows/github-action.yml)
+
 ## Setup
 
 ### Get project

@@ -3,9 +3,13 @@
     "version": "1.0.0",
     "description": "schedules/games in World Cup 2022",
     "main": "server.js",
+    "type": "module",
     "scripts": {
         "start": "node server.js",
-        "dev": "nodemon server.js"
+        "dev": "nodemon server.js",
+        "lint": "eslint .",
+        "test": "mocha --reporter json > test-results.json --exit --recursive --timeout 10000 tests --trace-warnings",
+        "test_console": "mocha --exit --recursive --timeout 10000 tests --trace-warnings"
     },
     "author": "Markus Thulin",
     "license": "MIT",
@@ -14,15 +18,20 @@
         "url": "https://github.com/thulin82/worldcup2022"
     },
     "dependencies": {
+        "apicache": "^1.6.0",
+        "axios": "^1.7.0",
+        "chai": "^5.1.0",
+        "chai-http": "^5.1.0",
         "cors": "^2.8.0",
         "dotenv": "^16.4.0",
         "express": "^4.21.0",
         "hbs": "^4.2.0",
-        "axios": "^1.7.0",
-        "apicache": "^1.6.0"
+        "mocha": "^11.0.0"
     },
     "devDependencies": {
+        "@eslint/js": "^9.16.0",
         "eslint": "^9.16.0",
+        "globals": "^15.13.0",
         "nodemon": "^3.1.0"
     }
 }
