@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "apicache": "^1.6.0",
-    "axios": "^1.13.0",
+    "axios": "^1.15.2",
     "chai": "^5.2.0",
     "chai-http": "^5.1.0",
     "cors": "^2.8.0",
