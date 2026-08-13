@@ -10,7 +10,7 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: "./config/config.env", quiet: true });
 
 hbs.registerHelper("isPlayOffs", function (value) {
     return value == "Playoffs";
