@@ -5,7 +5,7 @@ import axios from "axios";
 const router = express.Router();
 const URL = "https://api.football-data.org/v4/competitions/2000/matches";
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 /**
  * Default Route, get group matches
