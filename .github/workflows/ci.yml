@@ -7,41 +7,41 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    name: Build and Test
+  build-and-test:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ["lts/*", "lts/-1"]
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Use Node.js v24.x
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v7
         with:
-          node-version: "24.x"
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Test
-        run: npm test
-        env:
-          API_KEY: ${{secrets.API_KEY}}
-          API_KEY2: ${{secrets.API_KEY2}}
-
       - name: Lint
         run: npm run lint
 
-      - name: Upload Test Report
-        if: failure()
-        uses: actions/upload-artifact@v7
-        with:
-          name: test-results
-          path: test-results.json
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Test
+        run: npm run test:ci
+
+      - name: Build
+        run: npm run build
 
       - name: Test Report
         uses: dorny/test-reporter@v3
         with:
-          name: unit tests (v24.x)
-          path: test-results.json
-          reporter: mocha-json
+          name: unit tests (${{ matrix.node-version }})
+          path: reports/junit.xml
+          reporter: java-junit

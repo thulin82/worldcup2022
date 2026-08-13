@@ -1,0 +1,29 @@
+{{> header }}
+<div class="collapse navbar-collapse" id="main-menu">
+  <div class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Index</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/playoff">Playoff</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/scorers">Scorers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/standings">Standings</a>
+    </li>
+  </div>
+</div>
+</div>
+</nav>
+<div class="container-fluid p-5">
+  <div class="row g-4 p-4">
+    <div class="col-6 mx-auto text-center">
+      <h1 class="display-1">{{ statusCode }}</h1>
+      <p class="lead">{{ message }}</p>
+      <a href="/" class="btn btn-dark">Back to the group stage</a>
+    </div>
+  </div>
+</div>
+{{> footer }}
